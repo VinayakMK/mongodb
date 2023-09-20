@@ -1,0 +1,25 @@
+show dbs - shows db
+cls - clear
+use *dbname* - creates a db
+db.createCollection('name') - creates collection
+show collections - shows the collections that are created
+db.*collectionname*.insertOne({}) - inserts contents
+db.*collectionname*.find() - to find 
+db.posts.insertMany([{}]) - to insert more than 1 contents
+db.posts.find({*key: value*}) - what we need to find specifically
+db_001> db.posts.find().sort() - sorts
+db_001> db.posts.find().sort({*key*: -1}) - sort in descending order
+db_001> db.posts.find().sort({*key*: 1}) - sort in acending order
+db.posts.find().count() - total number
+db.posts.find({*key: value*}).count() - find exact number of selected  
+db_001> db.posts.find().limit(2) - to limit the number of contents that can be shown
+db_001> db.posts.find({likes:{$gt:2}}).limit(2) - prints likes that are greater than 2
+db_001> db.posts.find({likes:{$gt:2}}).limit(2).sort({likes:-1}) - prints likes that are greater than 2 in descending
+db.posts.updateOne({title:'Post1'},{$set:{category:'Business'}}) - updates
+db.posts.updateOne({title:'Post 5'},{$set:{category:'Travel'}}, {upsert:true}) - creates a new one while update
+db.PremiereLeague.updateOne({Team: 'Tottenham Hotspurs'}, {$inc:{Position: 10}}) - to increment
+db.PremiereLeague.find({Position:{$gt:4}}).count() - counts the specific positions
+db.PremiereLeague.updateMany({}, {$inc:{Position:1}}) - increment postion of all by one (-1 to decrement the same way)
+db.PlayerInfo.insertMany([ { Name: 'Gabriel Jesus', Country: 'Brazil' },{ Name: 'Aaron Ramsdale', Country: 'England' } ]) - inserts many
+db.PlayerInfo.deleteMany({ Country: 'France' }) - deletes specific
+db.PlayerInfo.deleteMany({}) - deletes all
